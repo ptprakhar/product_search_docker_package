@@ -13,7 +13,7 @@ My Approach (Architecture Explanation)
 
 - I have used Elasticsearch for better and faster searching and it can be scaled in multiple clusters easily
 
-- I have used kafka for queuing data so we can introduce multiple datasources easity in future, all sources have to push data to kafka topic. This give strong foundation to entier data import mechanism
+- I have used kafka for queuing data so we can introduce multiple data sources easily in future, all sources have to push data to the kafka topic. This give strong foundation to entier data import mechanism
 
 - I have used logstash as “Consumer” it takes the data from Kafka TOPIC and pushes into the elastic Search (Simple 4-5 lines of configuration)
 
@@ -38,8 +38,8 @@ Starting the application
 ========================
 
 ```bash
-	 chmod +x deploy.sh
-	./deploy.sh
+chmod +x deploy.sh
+./deploy.sh
 ```
 or 
 
@@ -58,7 +58,7 @@ http://localhost:8080/swagger-ui/index.html?configUrl=/v3/api-docs/swagger-confi
 
 Spring Boot APIs
 http://localhost:8080/api/v1/dataImport/pushBulkData - POST
-http://localhost:8080/api/v1/product/search?productName=Brown eggs&productCategory=dairy - GET
+http://localhost:8080/api/v1/product/search?productName=Brown%20eggs&productCategory=dairy%20-%20GET - GET
 
 Kafka Kafdrop
 localhost:9000
@@ -66,3 +66,6 @@ localhost:9000
 Elastic Search
 localhost:9200
 
+Sample Data
+========================
+Sample data can be found in sampleDataPayload.json, this data can be passed in body
