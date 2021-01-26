@@ -20,6 +20,9 @@ My Approach (Architecture Explanation)
 - Application is developed using Spring Boot Framework (java), that is also running in container
 
 
+![alt text](https://raw.githubusercontent.com/ptprakhar/product_search_docker_package/master/architecture.png)
+
+
 Running the application
 ========================
 Entire application is running in docker containers
