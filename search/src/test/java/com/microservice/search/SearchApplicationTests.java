@@ -18,7 +18,6 @@ class SearchApplicationTests {
 	@MockBean
 	private ProductRepositiry prodRepo;
 
-	
 	@Test
 	void contextLoads() {
 		assertThat(productController).isNotNull();

@@ -6,10 +6,9 @@ import org.springframework.data.elasticsearch.repository.ElasticsearchRepository
 import org.springframework.stereotype.Repository;
 
 import com.microservice.search.model.Product;
+
 @Repository
-public interface ProductRepositiry extends ElasticsearchRepository<Product, String>  {
+public interface ProductRepositiry extends ElasticsearchRepository<Product, String> {
 
-	 List<Product> findByNameAndCategoryOrderByRatingDesc(String name, String category);
+	List<Product> findByNameAndCategoryOrderByRatingDesc(String name, String category);
 }
-
-

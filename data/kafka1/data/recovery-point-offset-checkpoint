@@ -14,7 +14,7 @@ __consumer_offsets 35 0
 __consumer_offsets 41 0
 __consumer_offsets 33 0
 __consumer_offsets 23 0
-__consumer_offsets 49 667
+__consumer_offsets 49 66
 __consumer_offsets 47 0
 __consumer_offsets 16 0
 __consumer_offsets 28 0
@@ -51,4 +51,4 @@ __consumer_offsets 34 0
 __consumer_offsets 10 0
 __consumer_offsets 32 0
 __consumer_offsets 40 0
-product_detail 0 1100
+product_detail 0 20650

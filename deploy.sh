@@ -10,9 +10,9 @@ function trap_ctrlc() {
 trap "trap_ctrlc" 2
 
 #Running
-#cd ./search &&
-#sudo mvn clean install -DskipTests &&
+cd ./search &&
+sudo mvn clean install -DskipTests &&
 #again coming back and running docker-compose
-#cd .. &&
+cd .. &&
 sudo docker-compose build &&
 sudo docker-compose up

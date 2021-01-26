@@ -1,7 +1,10 @@
 package com.microservice.search.dto;
 
+import com.microservice.search.model.Product;
+
 /**
  * DTO Class for holding product details
+ * 
  * @author prakhar
  *
  */
@@ -15,57 +18,83 @@ public class ProductDetail {
 	private Integer width;
 	private Double price;
 	private Integer rating;
-	
+
 	public String getName() {
 		return name;
 	}
+
 	public void setName(String name) {
 		this.name = name;
 	}
+
 	public String getCategory() {
 		return category;
 	}
+
 	public void setCategory(String category) {
 		this.category = category;
 	}
+
 	public String getDescription() {
 		return description;
 	}
+
 	public void setDescription(String description) {
 		this.description = description;
 	}
+
 	public String getFilename() {
 		return filename;
 	}
+
 	public void setFilename(String filename) {
 		this.filename = filename;
 	}
+
 	public Integer getHeight() {
 		return height;
 	}
+
 	public void setHeight(Integer height) {
 		this.height = height;
 	}
+
 	public Integer getWidth() {
 		return width;
 	}
+
 	public void setWidth(Integer width) {
 		this.width = width;
 	}
+
 	public Double getPrice() {
 		return price;
 	}
+
 	public void setPrice(Double price) {
 		this.price = price;
 	}
+
 	public Integer getRating() {
 		return rating;
 	}
+
 	public void setRating(Integer rating) {
 		this.rating = rating;
 	}
-	
-	
-	
-}
 
+	public Product toProductEntity() {
+		Product product = new Product();
+		product.setName(this.name);
+		product.setCategory(this.category);
+		product.setDescription(this.description);
+		product.setFilename(this.filename);
+		product.setHeight(this.height);
+		product.setWidth(this.width);
+		product.setPrice(this.price);
+		product.setRating(this.rating);
+
+		return product;
+	}
+
+}

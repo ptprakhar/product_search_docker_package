@@ -14,27 +14,30 @@ import org.springframework.kafka.support.serializer.JsonSerializer;
 
 import com.microservice.search.dto.ProductDetail;
 
+/**
+ * Class handles configuration releted to Kafka
+ * 
+ * @author prakhar
+ *
+ */
 @Configuration
 public class KafkaConfiguration {
 
 	@Value("${kafka.host}")
 	private String kafkaHost;
-	
-    @Bean
-    public ProducerFactory<String, ProductDetail> producerFactory() {
-        Map<String, Object> config = new HashMap<>();
-        config.put(ProducerConfig.BOOTSTRAP_SERVERS_CONFIG, kafkaHost);
-        config.put(ProducerConfig.KEY_SERIALIZER_CLASS_CONFIG, StringSerializer.class);
-        config.put(ProducerConfig.VALUE_SERIALIZER_CLASS_CONFIG, JsonSerializer.class);
-        return new DefaultKafkaProducerFactory<>(config);
-    }
 
+	@Bean
+	public ProducerFactory<String, ProductDetail> producerFactory() {
+		Map<String, Object> config = new HashMap<>();
+		config.put(ProducerConfig.BOOTSTRAP_SERVERS_CONFIG, kafkaHost);
+		config.put(ProducerConfig.KEY_SERIALIZER_CLASS_CONFIG, StringSerializer.class);
+		config.put(ProducerConfig.VALUE_SERIALIZER_CLASS_CONFIG, JsonSerializer.class);
+		return new DefaultKafkaProducerFactory<>(config);
+	}
 
-    @Bean
-    public KafkaTemplate<String, ProductDetail> kafkaTemplate() {
-        return new KafkaTemplate<>(producerFactory());
-    }
-
-    
+	@Bean
+	public KafkaTemplate<String, ProductDetail> kafkaTemplate() {
+		return new KafkaTemplate<>(producerFactory());
+	}
 
 }

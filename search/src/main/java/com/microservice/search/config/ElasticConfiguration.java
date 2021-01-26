@@ -1,4 +1,4 @@
-	package com.microservice.search.config;
+package com.microservice.search.config;
 
 import org.elasticsearch.client.RestHighLevelClient;
 import org.springframework.beans.factory.annotation.Value;
@@ -12,32 +12,30 @@ import org.springframework.data.elasticsearch.core.ElasticsearchRestTemplate;
 import org.springframework.data.elasticsearch.repository.config.EnableElasticsearchRepositories;
 
 /**
- * class handles configuration related to elastic 
+ * class handles configuration related to elastic
+ * 
  * @author prakhar
  *
  */
 
 @Configuration
 @EnableElasticsearchRepositories(basePackages = "com.microservice.search.repository")
-public class ElasticConfiguration  {
-	
+public class ElasticConfiguration {
+
 	@Value("${elastic.host}")
 	private String elasticHost;
-	
-	@Bean
-    public RestHighLevelClient elasticsearchClient() {
 
-        final ClientConfiguration clientConfiguration = ClientConfiguration.builder()  
-            .connectedTo(elasticHost)
-            .build();
-
-        return RestClients.create(clientConfiguration).rest();                         
-    }
-	
 	@Bean
-    public ElasticsearchOperations elasticsearchTemplate() {
-        return new ElasticsearchRestTemplate(elasticsearchClient());
-    }
-	
-	
+	public RestHighLevelClient elasticsearchClient() {
+
+		final ClientConfiguration clientConfiguration = ClientConfiguration.builder().connectedTo(elasticHost).build();
+
+		return RestClients.create(clientConfiguration).rest();
+	}
+
+	@Bean
+	public ElasticsearchOperations elasticsearchTemplate() {
+		return new ElasticsearchRestTemplate(elasticsearchClient());
+	}
+
 }
