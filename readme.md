@@ -11,13 +11,13 @@ Tech Stack
 My Approach (Architecture Explanation)
 ======================================
 
-- I have used Elasticsearch for better and faster searching and it can be scaled in multiple clusters easily
+- I have used Elasticsearch for faster searching and it can be scaled in multiple clusters easily if required
 
-- I have used kafka for queuing data so we can introduce multiple data sources easily in future, all sources have to push data to the kafka topic. This give strong foundation to entier data import mechanism
+- I have used kafka for queuing data. We can introduce multiple data sources easily in future, all sources have to push data to the kafka topic. This gives strong foundation to entier data import mechanism.
 
 - I have used logstash as “Consumer” it takes the data from Kafka TOPIC and pushes into the elastic Search (Simple 4-5 lines of configuration)
 
-- Application is developed using Spring Boot Framework (java), that is also running in container
+- Application is developed using Spring Boot Framework (java), that is also running within container
 
 
 ![alt text](https://raw.githubusercontent.com/ptprakhar/product_search_docker_package/master/architecture.png)
@@ -25,7 +25,7 @@ My Approach (Architecture Explanation)
 
 Running the application
 ========================
-Entire application is running in docker containers
+Entire application is running in the docker containers
 
 Docker Containers
 	Zookeeper
